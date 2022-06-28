@@ -29,10 +29,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run frontend:dev",
-    "build": "npm run frontend:build",
-    "frontend:build": "webpack --progress --config webpack.prod.js",
-    "frontend:dev": "webpack-dev-server --progress --config webpack.dev.js"
+    "start": "webpack-dev-server --progress --config webpack.dev.js",
+    "build": "webpack --progress --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
