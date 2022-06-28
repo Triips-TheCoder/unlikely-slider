@@ -49,7 +49,11 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                        }
                     },
                     {
                         loader: 'postcss-loader'
@@ -87,7 +91,7 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             template: 'app/views/index.html',
-            filename: 'index.html',
+            filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',

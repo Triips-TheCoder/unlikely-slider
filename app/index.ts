@@ -1,43 +1,14 @@
-import { detectWebP } from './script/utils/detect-webp'
+import render from './script/render'
+import App from './App'
+import { componentStack } from './script/componentStack'
+import 'global.scss'
+const app = document.querySelector('#app') as HTMLElement
+componentStack.set('App', App)
 
-/**
- * Initializate all the javascript logic
- */
-class App {
-    private static instance: App
+window.addEventListener('DOMContentLoaded', () =>
+    render(app as HTMLElement, '<App/>')
+)
 
-    constructor(private supportWebP = true) {
-    }
 
-    /**
-     * Singleton Pattern
-     * @return App
-     */
-    static getInstance() {
-        if (App.instance)
-            return this.instance
-        else
-            return this.instance = new App()
-    }
 
-    /**
-     * Init application logic
-     */
-    public init() {
-        // Check if user browsers support WebP
-        (async () => {
-            if (await detectWebP()) {
-                document.documentElement.classList.add('webp')
-            } else {
-                this.supportWebP = false
-                document.documentElement.classList.add('no-webp')
-            }
-            // Obtenir toutes les variables css qui contiennent un lien vers une image
-        })()
-    }
-}
-
-const app = App.getInstance()
-app.init()
-
-export {}
+export {app}
