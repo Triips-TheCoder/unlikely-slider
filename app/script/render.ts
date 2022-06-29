@@ -1,5 +1,4 @@
 import { componentStack } from './componentStack'
-import renderingLoop from './renderingLoop'
 
 const render = (root: HTMLElement, appComponent: string) => {
     const removeSign = /[a-zA-Z]+/
@@ -12,9 +11,6 @@ const render = (root: HTMLElement, appComponent: string) => {
         ? root.innerHTML = componentStack.get(functionName)?.()!
         : console.warn('Veuillez ajouter le composant <App/> dans la stack')
 }
-
-renderingLoop.start()
-
 
 
 export default render

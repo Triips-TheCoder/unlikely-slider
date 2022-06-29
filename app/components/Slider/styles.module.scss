@@ -1,3 +1,42 @@
 .backgroundRed {
     background-color: red;
 }
+
+.container {
+    align-items: center;
+    display: flex;
+    height: 30rem;
+    justify-content: center;
+    width: 64rem;
+}
+
+.test {
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    left: 0;
+}
+
+.sliderButtonNext {
+    left: 0;
+}
+
+.sliderImage {
+    height: 100%;
+    object-fit: cover;
+    //vertical-align: middle;
+    width: 64rem;
+}
+
+.total {
+    position: absolute;
+    bottom: -2.2rem;
+}
+
+

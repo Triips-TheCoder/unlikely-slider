@@ -1,7 +1,24 @@
 body {
     height: 100vh;
-    background: blue;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: calc(100vw / 1440 * 10);
+    overflow: hidden;
+    background: #010101;
+}
+
+button {
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+
+    &:first-child {
+        left: 5rem;
+    }
+
+    &:nth-child(2) {
+        right: 5rem;
+    }
 }

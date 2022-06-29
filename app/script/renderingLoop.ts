@@ -1,6 +1,8 @@
 import { app } from '../index'
+import noop from '../noop'
 
 const renderingLoop = (() => {
+
     let componentQueue = new Set()
     let oldComponentState: any = 0
     let hasComponentInQueue = false
@@ -17,17 +19,14 @@ const renderingLoop = (() => {
         requestAnimationFrame(workLoop)
 
         hasComponentInQueue && componentQueue.forEach(component => {
-            console.log(component.state)
             component.state !== oldComponentState
-                ? (console.log('shit'), app.innerHTML = component.render(), oldComponentState = component.state)
-                : console.log('SAME')
+                ? (app.innerHTML = component.render(), oldComponentState = component.state)
+                : noop()
         })
     }
+    requestAnimationFrame(workLoop)
 
-    const start = () =>
-        requestAnimationFrame(workLoop)
-
-    return { start, addComponent, removeComponent }
+    return { addComponent, removeComponent }
 })()
 
 export default renderingLoop
