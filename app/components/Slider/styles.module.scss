@@ -30,13 +30,25 @@
 .sliderImage {
     height: 100%;
     object-fit: cover;
-    //vertical-align: middle;
+    vertical-align: bottom;
     width: 64rem;
 }
 
 .total {
     position: absolute;
-    bottom: -2.2rem;
+    bottom: 20%;
+    right: 39.7rem;
+    font-size: 2.912rem;
+    color: white;
+}
+
+.logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 10;
+    width: 20rem;
 }
 
 

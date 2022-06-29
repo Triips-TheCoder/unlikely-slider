@@ -12,13 +12,15 @@ const renderingLoop = (() => {
         hasComponentInQueue = true
     }
 
-    const removeComponent = (component) =>
-        componentQueue.delete(component)
-
     const workLoop = () => {
         requestAnimationFrame(workLoop)
 
         hasComponentInQueue && componentQueue.forEach(component => {
+            if (component.unmount) {
+                app.innerHTML = ''
+                return
+            }
+
             component.state !== oldComponentState
                 ? (app.innerHTML = component.render(), oldComponentState = component.state)
                 : noop()
@@ -26,7 +28,7 @@ const renderingLoop = (() => {
     }
     requestAnimationFrame(workLoop)
 
-    return { addComponent, removeComponent }
+    return { addComponent }
 })()
 
 export default renderingLoop
