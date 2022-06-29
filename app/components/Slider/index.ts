@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import renderingLoop from '../../script/renderingLoop'
 
-class Slider {
+class Slider implements Component {
     #state: number
     #numberOfSlide: number
     #unmount: boolean
@@ -11,10 +11,6 @@ class Slider {
         this.#numberOfSlide = 6
         this.#unmount = false
         this.#onMount()
-    }
-
-    public get state(): number {
-        return this.#state
     }
 
     public render(): string {
@@ -51,8 +47,17 @@ class Slider {
         `
     }
 
+    get unmount(): boolean {
+        return this.#unmount
+    }
+
+
+    get state(): number {
+        return this.#state
+    }
+
     #onMount() {
-        console.log('composant monté')
+        alert('composant monté')
     }
 
     #onUnmount() {
@@ -81,11 +86,6 @@ class Slider {
             this.#unmount = true
             this.#onUnmount()
         }
-
-    }
-
-    get unmount(): boolean {
-        return this.#unmount
     }
 
     #setState(nextState: number): void {

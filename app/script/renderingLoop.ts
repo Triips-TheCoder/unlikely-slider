@@ -3,11 +3,11 @@ import noop from '../noop'
 
 const renderingLoop = (() => {
 
-    let componentQueue = new Set()
-    let oldComponentState: any = 0
+    let componentQueue = new Set<Component>()
+    let oldComponentState: number = 0
     let hasComponentInQueue = false
 
-    const addComponent = (component) => {
+    const addComponent = (component: Component) => {
         componentQueue.add(component)
         hasComponentInQueue = true
     }

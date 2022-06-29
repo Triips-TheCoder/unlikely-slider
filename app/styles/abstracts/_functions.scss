@@ -1,8 +1,0 @@
-@function scaleValue(
-  $value,
-  $idealViewportWidth: 1440,
-  $min: 768px,
-  $max: 1920px
-) {
-  @return calc(#{$value} * (clamp(#{$min}, 100vw, #{$max}) / #{$idealViewportWidth}));
-}

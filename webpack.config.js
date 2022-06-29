@@ -14,8 +14,7 @@ const dirNode = 'node_modules'
 module.exports = {
     target: ['web', 'es5'],
     entry: [
-        path.join(dirApp, 'index.ts'),
-        path.join(dirStyles, 'main.scss')
+        path.join(dirApp, 'index.ts')
     ],
     resolve: {
         extensions: ['.ts', '.js'],
@@ -52,7 +51,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
-                            modules: true,
+                            modules: true
                         }
                     },
                     {

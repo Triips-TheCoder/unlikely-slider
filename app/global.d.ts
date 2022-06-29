@@ -1,2 +1,9 @@
 type JSXFunction = () => string
-type useStateT = <T>(value: T) => [{value: T}, (callback) => void]
+
+interface Component {
+    render(): string
+
+    get unmount(): boolean
+
+    get state(): any
+}
