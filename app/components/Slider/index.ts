@@ -26,7 +26,11 @@ class Slider {
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.64533 31.5L25.7173 15.1331L24 13.125L-1.90735e-06 32.8676L24 52.5L25.72 50.4945L5.64266 34.125L64 34.125V31.5L5.64533 31.5Z" fill="white"/>
             </svg>
           </button>
-          <button id='next'>Next</button>
+          <button id='next'>
+            <svg width="64" height="63" viewBox="0 0 64 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M58.3547 31.5L38.2827 47.8669L40 49.875L64 30.1324L40 10.5L38.28 12.5055L58.3573 28.875H0V31.5H58.3547Z" fill="white"/>
+            </svg>
+          </button>
           <div class=${ styles.test }>
             <div class=${ styles.container }>
                <div class=${ styles.slider } style='transform:translate3d(-${ 64 * (this.#state % this.#numberOfSlide) }rem, 0, 0)'>
