@@ -7,9 +7,7 @@ const app = document.querySelector('#app') as HTMLElement
 componentStack.set('App', App)
 
 window.addEventListener('DOMContentLoaded', () =>
-    render(app as HTMLElement, '<App/>')
+    render(app, '<App/>')
 )
 
-
-
-export {app}
+export { app }
